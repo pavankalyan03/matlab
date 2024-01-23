@@ -1,0 +1,21 @@
+a=imread('eren.jpg');
+b=imread('levi.jpg');
+ga=rgb2gray(a);
+gb=rgb2gray(b);
+z=imresize(a,[250,250]);
+x=imresize(b,[250,250]);
+%arithmetic oprations
+c=imadd(z,x);
+d=imsubtract(z,x);
+e=immultiply(z,x);
+f=imdivide(z,x);
+ca=imcomplement(z);
+cb=imcomplement(x);
+subplot(3,3,1),imshow(c),title('addition of images ');
+subplot(3,3,2),imshow(d),title('subtraction of images ');
+subplot(3,3,3),imshow(e),title('multiply of images ');
+subplot(3,3,4),imshow(f),title('division of images ');
+subplot(3,3,5),imshow(ga),title('gray image of a');
+subplot(3,3,6),imshow(gb),title('gray image of b');
+subplot(3,3,7),imshow(ca),title('complement a');
+subplot(3,3,8),imshow(xorb),title('complement b');
