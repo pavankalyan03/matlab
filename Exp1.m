@@ -1,0 +1,43 @@
+a=imread('eren.jpg');
+
+A=rgb2gray(a);
+
+b=imread('levi.jpg');
+
+B=rgb2gray(b);
+
+A = imresize(A,[200 200]);
+B = imresize(B,[200 200]);
+
+figure(1)
+imshow(a);
+
+figure(2)
+imshow(b);
+
+figure(3)
+subplot (2,2,1) , imshow(add),title('addition');
+subplot (2,2,2) , imshow(sub),title('subtraction');
+subplot (2,2,3) , imshow(mul),title('multiplication');
+subplot (2,2,4) , imshow(div),title('division');
+
+
+
+%logical operators
+log_or = bitor(A,B);
+log_and = bitand(A,B);
+log_xor = bitxor(A,B);
+
+
+figure(4)
+subplot (1,3,1) , imshow(log_or),title('logical or');
+subplot (1,3,2) , imshow(log_and),title('logical and');
+subplot (1,3,3) , imshow(log_xor),title('logical xor');
+
+figure(5)
+E=imread('cat.jpg');
+img2=histeq(E);
+subplot(2,2,1),imshow(E),title('original image');
+subplot(2,2,2),imhist(E),title('histogram eq of image1');
+subplot(2,2,3),imshow(img2),title('result image');
+subplot(2,2,4),imhist(img2),title('histogram eq of result image');
